@@ -1,0 +1,24 @@
+<%= form_for(book) do |f| %>
+<% if f.object.errors.any? %>
+  <div class="alert alert-warning">
+    <h3><%= pluralize(f.object.errors.count, "error") %> prohibited this obj from being saved:</h3>
+    <ul>
+      <% f.object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    </div>
+    <% end %>
+  <% end %>
+	<div class="field row">
+		<%= f.label :title %>
+		<%= f.text_field :title, class: "col-xs-12 book_title" %>
+	</div>
+
+	<div class="field row">
+		<%= f.label :body %>
+		<%= f.text_area :body, class: "col-xs-12 book_body" %>
+	</div>
+
+	<div class="actions row">
+		<%= f.submit class: "btn btn-primary col-xs-12" %>
+	</div>
+<% end %>
