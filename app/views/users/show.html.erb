@@ -39,3 +39,6 @@
 		</div>
 	</div>
 </div>
+<% current_user.followings.each do |u| %>
+<p><%= u.id %></p>
+<% end %>
